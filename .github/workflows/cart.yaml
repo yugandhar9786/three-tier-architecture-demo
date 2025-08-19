@@ -14,31 +14,33 @@ on:
       - '.github/workflows/cart.yaml'
 
 jobs:
-  payment:
+  cart:
     name: Build and Deploy Cart Microservice
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '24'
+          node-version: '18'   # use 18 or 20 (LTS), not 24
+
       - name: Install Dependencies
         run: |
           cd cart
           npm install
+
       - name: Docker Login
         uses: docker/login-action@v2
         with:
-          registry: Docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Docker Image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/cart:v ./cart
+
       - name: Push Docker Image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/cart:v
-
