@@ -37,7 +37,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/cart:v ./three-tier-architecture-demo/cart
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/cart:v ./cart
       - name: Push Docker Image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/cart:v
