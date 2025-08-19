@@ -1,4 +1,5 @@
-FROM golang:1.17
+# ----------- Build Stage -----------
+FROM golang:1.22
 
 WORKDIR /go/src/app
 
@@ -8,3 +9,4 @@ RUN go mod init dispatch && go get
 RUN go install
 
 CMD dispatch
+
