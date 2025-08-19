@@ -33,7 +33,7 @@ jobs:
         with:
           registry: Docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Docker Image
         run: |
