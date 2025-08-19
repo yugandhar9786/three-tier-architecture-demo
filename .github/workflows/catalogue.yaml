@@ -1,4 +1,4 @@
-name: catalogue
+name: catalogue-service
 on:
   push:
     branches:
