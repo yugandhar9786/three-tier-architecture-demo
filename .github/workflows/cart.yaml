@@ -1,4 +1,4 @@
-name: cart
+name: cart-service
 on:
   push:
     branches:
