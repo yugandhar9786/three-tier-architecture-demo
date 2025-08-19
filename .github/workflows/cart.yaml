@@ -16,7 +16,7 @@ on:
 jobs:
   payment:
     name: Build and Deploy Cart Microservice
-    runs-on: [self-hosted]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
